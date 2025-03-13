@@ -34,7 +34,7 @@ namespace CommandIDs {
 type Tree = Map<string, Tree>;
 
 /**
- * Convert the list of snippets a tree.
+ * Convert the list of snippets to a tree.
  * @param snippets The list of snippets.
  */
 function toTree(snippets: Snippet[]) {
@@ -45,7 +45,7 @@ function toTree(snippets: Snippet[]) {
       if (!node.has(part)) {
         node.set(part, new Map<string, Tree>());
       }
-      node = node.get(part);
+      node = node.get(part)!;
     });
   });
   return tree;
@@ -92,6 +92,8 @@ const extension: JupyterFrontEndPlugin<void> = {
     menu: IMainMenu | null,
     notebookTracker: INotebookTracker | null
   ) => {
+    console.log('JupyterLab extension jupyterlab-snippets is activated!');
+
     const { commands } = app;
 
     const isEnabled = () => {
@@ -122,11 +124,11 @@ const extension: JupyterFrontEndPlugin<void> = {
           return;
         }
 
-        const current = notebookTracker.currentWidget;
-        const notebook = current.content;
+        const current = notebookTracker!.currentWidget;
+        const notebook = current!.content;
         NotebookActions.insertBelow(notebook);
         const activeCell = notebook.activeCell;
-        activeCell.model.value.text = content;
+        activeCell!.model.sharedModel.setSource(content);
       },
       isEnabled
     });

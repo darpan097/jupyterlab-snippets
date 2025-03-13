@@ -2,6 +2,8 @@ import { URLExt } from '@jupyterlab/coreutils';
 
 import { ServerConnection } from '@jupyterlab/services';
 
+// Ref: https://github.com/jupyterlab/extension-examples/blob/main/server-extension/src/handler.ts
+
 /**
  * Call the API extension
  *
@@ -15,11 +17,7 @@ export async function requestAPI<T>(
 ): Promise<T> {
   // Make request to Jupyter API
   const settings = ServerConnection.makeSettings();
-  const requestUrl = URLExt.join(
-    settings.baseUrl,
-    'jupyterlab-snippets', // API Namespace
-    endPoint
-  );
+  const requestUrl = URLExt.join(settings.baseUrl, 'snippets', endPoint);
 
   let response: Response;
   try {

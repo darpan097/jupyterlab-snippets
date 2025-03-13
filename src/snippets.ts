@@ -1,6 +1,4 @@
-import { URLExt } from '@jupyterlab/coreutils';
-
-import { ServerConnection } from '@jupyterlab/services';
+import { requestAPI } from './handler';
 
 /**
  * The type for a Snippet.
@@ -31,34 +29,4 @@ export async function fetchSnippet(snippet: Snippet): Promise<ISnippetContent> {
     body: JSON.stringify({ snippet })
   };
   return requestAPI<ISnippetContent>('get', request);
-}
-
-/**
- * Call the API extension
- *
- * @param endPoint API REST end point for the extension
- * @param init Initial values for the request
- * @returns The response body interpreted as JSON
- */
-async function requestAPI<T>(
-  endPoint = '',
-  init: RequestInit = {}
-): Promise<T> {
-  const settings = ServerConnection.makeSettings();
-  const requestUrl = URLExt.join(settings.baseUrl, 'snippets', endPoint);
-
-  let response: Response;
-  try {
-    response = await ServerConnection.makeRequest(requestUrl, init, settings);
-  } catch (error) {
-    throw new ServerConnection.NetworkError(error);
-  }
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new ServerConnection.ResponseError(response, data.message);
-  }
-
-  return data;
 }
