@@ -1,7 +1,9 @@
-# jupyterlab_snippets
+# jupyterlab-snippets
 
-[![Github Actions Status](https://github.com/QuantStack/jupyterlab-snippets.git/workflows/Build/badge.svg)](https://github.com/QuantStack/jupyterlab-snippets.git/actions/workflows/build.yml)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/QuantStack/jupyterlab-snippets.git/main?urlpath=lab)
+![Github Actions Status](https://github.com/QuantStack/jupyterlab-snippets/workflows/Build/badge.svg)
+[![Version](https://img.shields.io/pypi/v/jupyterlab-snippets.svg)](https://pypi.python.org/project/jupyterlab-snippets)
+[![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlab-snippets.svg)](https://anaconda.org/conda-forge/jupyterlab-snippets)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/QuantStack/jupyterlab-snippets/stable?urlpath=lab/tree/binder/example.ipynb)
 
 Snippets Extension for JupyterLab.
 
@@ -12,6 +14,7 @@ for the frontend extension.
 ## Requirements
 
 - JupyterLab >= 4.0.0, <5.0.0
+- Node.js
 
 ## Install
 
