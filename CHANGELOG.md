@@ -23,7 +23,7 @@
 ### Changes
 
 - Don't list hidden folder #25
-- Correct hidden folder removal #26 
-- Port to JupyterLab 3 #33 
+- Correct hidden folder removal #26
+- Port to JupyterLab 3 #33
 
 Many thanks @fcollonval for the contributions!

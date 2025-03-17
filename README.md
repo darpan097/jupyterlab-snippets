@@ -49,10 +49,13 @@ pip uninstall jupyterlab-snippets
 Add snippets in `[jupyter_data_dir]/snippets` (see: https://jupyter.readthedocs.io/en/latest/projects/jupyter-directories.html#id2)
 
 To find the Jupyter data directory, run:
+
 ```bash
 $ jupyter --path
 ```
+
 This will for example show the following list on macOS:
+
 ```
 config:
     /Users/<username>/.jupyter
