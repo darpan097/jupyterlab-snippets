@@ -46,7 +46,7 @@ pip uninstall jupyterlab-snippets
 
 ## Usage
 
-Add snippets in `[jupyter_data_dir]/snippets` (see: https://jupyter.readthedocs.io/en/latest/projects/jupyter-directories.html#id2)
+Add snippets in `[jupyter_data_dir]/snippets` (see: https://docs.jupyter.org/en/stable/use/jupyter-directories.html#data-files)
 
 To find the Jupyter data directory, run:
 
